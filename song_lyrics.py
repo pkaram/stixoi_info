@@ -31,7 +31,16 @@ for i in range(0, songs_to_query.shape[0]):
     time.sleep(1)
     #select url to make request
     song_url_temp = songs_to_query.url[i]
-    page = requests.get(song_url_temp,timeout=5)
+    #try to make the request, if not successful, put it to sleep for 1 minute
+    while 1:
+        try:
+            page = requests.get(song_url_temp,timeout=5)
+            break
+        except:
+            print("put to sleep for 60 secs")
+            time.sleep(60)
+            pass
+
     #check if request is successful
     if page.status_code==200:
         soup = BeautifulSoup(page.content, 'html.parser')
