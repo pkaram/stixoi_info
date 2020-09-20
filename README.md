@@ -6,11 +6,17 @@ Information like artist names, lyricists and composers as well as lyrics of song
 
 Scripts included are fetching processing and storing the files in an SQLite Database in your local folder.
 
-Scripts should run in the following order:
+Scripts could either run in the following order:
 
 1. artists_first_letter_urls.py
 2. singers_urls.py
 3. songs_urls.py
 4. song_lyrics.py
+
+or use create_db.py to scrap data and build the database
+
+```
+python create_db.py
+```
 
 Data will be stored in stixoi_info.db. In all scripts 'time.sleep' parameters have been set to avoid server overload. 
