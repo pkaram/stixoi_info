@@ -20,3 +20,14 @@ python create_db.py
 ```
 
 Data will be stored in stixoi_info.db. In all scripts 'time.sleep' parameters have been set to avoid server overload. 
+
+**After creating the database** you can play around with the data, for example you can cluster the artists based on the songs 
+that they first sung.In this case I have used the songs and built a sensitivity score based on a sentitivity dictionary on greek language. To do this run the following:
+
+```
+python artist_clustering.py
+```
+
+As seen below, (screenshot of plot which is included as html file in the repo) artists that represent different genres are clustered together. 
+
+![Screenshot](artist_sensitivity_clusters_screenshot.png)
